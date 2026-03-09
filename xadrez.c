@@ -37,6 +37,21 @@ int main() {
     for (contadorrainha = 0; contadorrainha < casasrainha; contadorrainha++){
         printf("Esquerda\n");
     }
-    
+    //movimento do cavalo
+    printf("\n");
+
+    int j = 0;//variável de contagem
+
+    printf("----------------------\n");
+    printf(" MOVIMENTO DO CAVALO  \n");
+    printf("----------------------\n");
+    for(int i = 0; i < 1; i++){
+        while (j < 2)
+        {
+            printf("Cima\n");
+            j++;
+        }
+        printf("Direita\n");
+    }
     return 0;
 }
