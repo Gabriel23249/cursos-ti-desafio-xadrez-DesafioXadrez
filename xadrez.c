@@ -1,10 +1,37 @@
 #include <stdio.h>
+    //recursividades de movimento das peças
+    void movertorre(int casas){
+        if (casas > 0){
+            printf("Direita\n");
+            movertorre(casas - 1);
+        }
+    }
 
+    void moverBispo(int casas){
 
+    if(casas <= 0){
+        return;
+    }
+    for(int vertical = 0; vertical < 1; vertical++){
 
+        printf("Cima\n");
+
+        for(int horizontal = 0; horizontal < 1; horizontal++){
+            printf("Direita\n");
+        }
+    }
+    moverBispo(casas - 1);
+}
+
+    void moverrainha(int casas){
+        if (casas > 0){
+            printf("Esquerda\n");
+            moverrainha(casas - 1);
+        }
+    }
 int main() {
     //declarando valores das casas e os contadores de cada peça
-    int casastorre = 5,contadortorre = 0;
+   
     int casasbispo = 5,contadorbispo = 0;
     int casasrainha = 8,contadorrainha = 0;
     //movimento da torre
@@ -12,11 +39,7 @@ int main() {
     printf("  MOVIMENTO DA TORRE \n");
     printf("----------------------\n");
 
-    while (contadortorre < casastorre)
-    {
-        printf("Direita\n");
-        contadortorre++;
-    }
+    movertorre(5);
     //movimento do bispo
     printf("\n");//quebra de linha
 
@@ -24,34 +47,38 @@ int main() {
     printf("  MOVIMENTO DO BISPO \n");
     printf("----------------------\n");
 
-    do{
-        printf("Cima, direita\n");
-        contadorbispo++;
-    }while(contadorbispo < casasbispo);
+    moverBispo(5);
     //movimento da rainha
     printf("\n");
     printf("----------------------\n");
     printf(" MOVIMENTO DA RAINHA  \n");
     printf("----------------------\n");
 
-    for (contadorrainha = 0; contadorrainha < casasrainha; contadorrainha++){
-        printf("Esquerda\n");
-    }
+    moverrainha(8);
     //movimento do cavalo
     printf("\n");
-
-    int j = 0;//variável de contagem
 
     printf("----------------------\n");
     printf(" MOVIMENTO DO CAVALO  \n");
     printf("----------------------\n");
-    for(int i = 0; i < 1; i++){
-        while (j < 2)
-        {
-            printf("Cima\n");
-            j++;
+    
+   for(int vertical = 0; vertical < 2; vertical++){
+
+        if(vertical == 1){
+            continue;
         }
+
+        printf("Cima\n");
+
+        if(vertical == 0){
+            printf("Cima\n");
+            break;
+        }
+    }
+
+    for(int horizontal = 0; horizontal < 1; horizontal++){
         printf("Direita\n");
     }
+
     return 0;
 }
